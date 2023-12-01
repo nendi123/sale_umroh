@@ -1,0 +1,24 @@
+<odoo>
+    <template id="report_invoice_document_inherit" inherit_id="account.report_invoice_document">
+        <xpath expr="//div[@class='row mt-4 mb-4']" position="before">
+            <div>
+                <center>Data Jamaah</center>
+                <table>
+                    <tr>
+                        <td>Nama</td>
+                    </tr>
+                    <t t-set="sale_orders" t-value="env['sale.order'].search([('name', '=', o.invoice_origin)])"/>
+                    <t t-foreach="sale_orders" t-as="sale_order">
+                        <t t-foreach="sale_order.jamaah_ids" t-as="jamaah_id">
+                            <tr>
+                                <td>
+                                    <p><span t-esc="jamaah_id.name"/></p> 
+                                </td>
+                            </tr>
+                        </t>
+                    </t>
+                </table>
+            </div>
+        </xpath>
+    </template>
+</odoo>

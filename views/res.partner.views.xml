@@ -1,0 +1,37 @@
+<odoo>
+    <data>
+        <record id="res_partner_jamaah" model="ir.ui.view">
+            <field name="name">res.partner.inherit.view.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form" />
+            <field name="arch" type="xml">
+              <xpath expr="/form/sheet/notebook/page[@name='contact_addresses']" position="after">
+                <page string="Data Jamaah" name="data_jamaah">
+                    <group string="Data Diri">
+                        <field name="nik"/>
+                        <field name="no_ktp"/>
+                        <field name="no_wa_darurat"/>
+                        <field name="foto_3x4" widget="image"/>
+                        <field name="foto_4x6" widget="image"/>
+                        <field name="foto_4x6" widget="image"/>
+
+                        <field name="scan_foto_ktp" widget="pdf_viewer"/>
+                        <field name="scan_foto_kk" widget="pdf_viewer"/>
+                        <field name="scan_akta_kelahiran" widget="pdf_viewer"/>
+                        <!-- <field name="scan_buku_nikah" widget="pdf_viewer"/> -->
+                        <field name="scan_ijazah" widget="pdf_viewer"/>
+                    </group>
+                    <group string="Passport">
+                        <field name="no_passport"/>
+                        <field name="tgl_terbit"/>
+                        <field name="tgl_expired"/>
+                        <field name="kantor_terbit"/>
+                        <field name="scan_foto_passport" widget="pdf_viewer"/>
+                        <field name="scan_buku_vaksin" widget="pdf_viewer"/>
+                    </group>
+                </page>
+              </xpath>
+            </field>
+          </record>
+    </data>
+</odoo>
