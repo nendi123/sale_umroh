@@ -2,22 +2,40 @@
     <template id="report_invoice_document_inherit" inherit_id="account.report_invoice_document">
         <xpath expr="//div[@class='row mt-4 mb-4']" position="before">
             <div>
-                <center>Data Jamaah</center>
-                <table>
-                    <tr>
-                        <td>Nama</td>
-                    </tr>
-                    <t t-set="sale_orders" t-value="env['sale.order'].search([('name', '=', o.invoice_origin)])"/>
-                    <t t-foreach="sale_orders" t-as="sale_order">
-                        <t t-foreach="sale_order.jamaah_ids" t-as="jamaah_id">
-                            <tr>
-                                <td>
-                                    <p><span t-esc="jamaah_id.name"/></p> 
-                                </td>
-                            </tr>
+                <t t-set="sale_orders" t-value="env['sale.order'].search([('name', '=', o.invoice_origin)])"/>
+                <t t-if="sale_orders">
+                    <center>Data Jamaah</center>
+                    <table>
+                        <tr>
+                            <td>Nama</td>
+                            <td>NIK</td>
+                            <td>No Paspor</td>
+                            <td>Tanggal Terbit</td>
+                            <td>Tanggal Kadaluarsa</td>
+                        </tr>
+                        <t t-foreach="sale_orders" t-as="sale_order">
+                            <t t-foreach="sale_order.jamaah_ids" t-as="jamaah_id">
+                                <tr>
+                                    <td>
+                                        <p><span t-esc="jamaah_id.name"/></p> 
+                                    </td>
+                                    <td>
+                                        <p><span t-esc="jamaah_id.nik"/></p> 
+                                    </td>
+                                    <td>
+                                        <p><span t-esc="jamaah_id.no_passport"/></p> 
+                                    </td>
+                                    <td>
+                                        <p><span t-esc="jamaah_id.tgl_terbit"/></p> 
+                                    </td>
+                                    <td>
+                                        <p><span t-esc="jamaah_id.tgl_kadaluarsa"/></p> 
+                                    </td>
+                                </tr>
+                            </t>
                         </t>
-                    </t>
-                </table>
+                    </table>
+                </t>
             </div>
         </xpath>
     </template>
