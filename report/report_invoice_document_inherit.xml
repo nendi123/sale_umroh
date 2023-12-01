@@ -29,12 +29,13 @@
                                         <p><span t-esc="jamaah_id.tgl_terbit"/></p> 
                                     </td>
                                     <td>
-                                        <p><span t-esc="jamaah_id.tgl_kadaluarsa"/></p> 
+                                        <p><span t-esc="jamaah_id.tgl_expired"/></p> 
                                     </td>
                                 </tr>
                             </t>
                         </t>
                     </table>
+                    <hr/>
                 </t>
             </div>
         </xpath>
