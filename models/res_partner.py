@@ -7,6 +7,7 @@ class ResPartner(models.Model):
     _inherit = 'res.partner'
 
     sale_id = fields.Many2many(comodel_name='sale.order', column2='jamaah_ids', column1="sale_id")
+    jamaah_account_id = fields.Many2many(comodel_name='account.move', column2='jamaah_ids', column1="jamaah_account_id")
     nik = fields.Char()
     no_ktp = fields.Char()
     no_wa_darurat = fields.Char()
