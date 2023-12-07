@@ -4,8 +4,8 @@
             <div>
                 <t t-set="sale_orders" t-value="env['sale.order'].search([('name', '=', o.invoice_origin)])"/>
                 <t t-if="sale_orders">
-                    <table width="100%">
-                        <tr>
+                    <table width="100%" style="line-height:2;border:1">
+                        <tr style="background-color: lightblue;">
                             <td style="padding-left:4px">Nama</td>
                             <td style="padding-left:4px">NIK</td>
                             <td style="padding-left:4px">No Paspor</td>
