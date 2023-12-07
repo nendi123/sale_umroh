@@ -7,7 +7,15 @@
             <field name="arch" type="xml">
               <xpath expr="/form/sheet/notebook/page[@name='customer_signature']" position="after">
                 <page string="Jamaah" name="data_jamaah">
-                    <field name="jamaah_ids" attrs="{'readonly': [('state','=','sale')]}"/>
+                    <field name="jamaah_ids" attrs="{'readonly': [('state','=','sale')]}">
+                      <tree>
+                        <field name="name" string="Nama Jamaah"/>
+                        <field name="nik" string="NIK"/>
+                        <field name="no_passport" string="No Passport"/>
+                        <field name="tgl_terbit" string="Tanggal Terbit"/>
+                        <field name="tgl_expired" string="Tanggal Expired"/>
+                    </tree>
+                    </field>
                 </page>
               </xpath>
             </field>
