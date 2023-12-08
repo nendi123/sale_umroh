@@ -38,5 +38,28 @@
                 </t>
             </div>
         </xpath>
+
+        <xpath expr="//div/p[@name='incoterm']" position="after">
+            <div t-attf-class="#{'offset-8 col-4 ml-auto' if report_type != 'html' else 'col-sm-7 col-md-5 ml-auto'}">
+                
+                      <!-- o.invoice_date itu merupakan tanggal invoice, dapat juga tanggal today.now (seperti di contoh gambar di bawah code berikut) -->
+                  <strong>Surakarta, <span t-field="o.invoice_date"/></strong>
+                  
+                  <br/>
+                  <br/>
+                  <br/>
+                  <br/>
+                  <!-- img berikut adalah get logo yang sudah di tanda tangani, get nya ke favicon di res.company -->
+                  <!-- <img t-attf-src="data:image/*;base64,{{o.company_id.favicon}}" t-att-alt="o.company_id.favicon" class="d-block" height="100px" width="200px"/> -->
+                      <!-- o.company.id ini digunakan jika multi company dan ingin berbeda" nama penandatangannya -->
+                      <!-- jika single company, assign saja company id=1, atau di hapus saja t-if nya -->
+                  
+                   <strong>Joice Sitawati</strong>
+                   <br/>
+                   Direktur Keuangan
+                  
+                
+              </div>
+            </xpath>
     </template>
 </odoo>
