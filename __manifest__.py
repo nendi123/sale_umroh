@@ -24,7 +24,8 @@
         'views/sale.order.views.xml',
         'views/res.partner.views.xml',
         'views/account.move.views.xml',
-        'report/report_invoice_document_inherit.xml'
+        'report/report_invoice_document_inherit.xml',
+        'report/external_layout_boxed_inherit.xml'
     ],
 
     'installable': True,
