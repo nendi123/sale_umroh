@@ -2,9 +2,17 @@
     <template id="report_invoice_document_inherit" inherit_id="account.report_invoice_document">
         <xpath expr="//div[@class='clearfix mb-4']" position="after">
             <div>
+                
+                <!-- 
+                    Backup
+                    Muslim Safar Project
+Jl. Prof. DR. Supomo No.11, Sriwedari, Kec. Laweyan,
+Surakarta JT 57141
+Indonesia -->
                 <t t-set="sale_orders" t-value="env['sale.order'].search([('name', '=', o.invoice_origin)])"/>
                 <t t-if="sale_orders">
-                    <table width="100%" style="line-height:2;border:1">
+                    <strong>Data Jamaah :</strong>
+                    <table width="100%" style="border:1">
                         <tr style="background-color: lightblue;">
                             <td style="padding-left:4px">Nama</td>
                             <td style="padding-left:4px">NIK</td>
@@ -14,7 +22,7 @@
                         </tr>
                         <t t-foreach="sale_orders" t-as="sale_order">
                             <t t-foreach="sale_order.jamaah_ids" t-as="jamaah_id">
-                                <tr>
+                                <tr style="padding-top:2px">
                                     <td style="padding-left:4px">
                                         <p><span t-esc="jamaah_id.name"/></p> 
                                     </td>
